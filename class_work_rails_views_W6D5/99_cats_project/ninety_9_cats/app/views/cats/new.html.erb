@@ -1,0 +1,56 @@
+
+<h1> Create Your Own Cat </h1>
+
+
+<form action = "/cats" method="POST">
+
+    <label for="name"> Name </label>
+    <input id="name" type=text>
+
+    <label for="birth_date"> Birthday </label>
+    <input id="birth_date" type=date>
+
+
+
+    <label for="description"> Description </label>
+    <input id="description" type=textarea>
+
+   
+
+
+<fieldset>
+    <legend> Select Cat Sex </legend>
+    <div>
+
+        <input id="female" value="f" type=radio checked>
+        <label for="female"> f </label>
+    </div>
+
+    <div>
+
+        <input id="male" value="m" type=radio>
+        <label for="male"> m </label>
+    </div>
+
+
+</fieldset>
+
+
+ 
+
+
+    <label for="color"> Color </label>
+    <select name="cat[color]" id="color">
+        <option value = ""> </option>
+
+    <%  Cat.colors.each do |color| %>
+        <option value = "<% color %>"> <%= color %> </option>
+    <% end %>
+    </select>
+
+    
+
+    <input type="submit" value="Congratulations you created a cat">
+
+</form>
+

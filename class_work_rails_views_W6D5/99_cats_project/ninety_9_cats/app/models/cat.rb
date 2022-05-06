@@ -1,8 +1,9 @@
 require 'action_view'
 
 class Cat < ApplicationRecord
+    
     validates :birth_date, :color, :name, :sex, :description , presence: true
-
+    
     COLORS =['blue','black','orange','brown','white']
     validates :color, inclusion:{ in: COLORS}
     SEX=['m','f']
@@ -11,6 +12,10 @@ class Cat < ApplicationRecord
 
     def age
         Time.now.year-birth_date.year
+    end
+
+    def self.colors
+        return COLORS
     end
 
 end
